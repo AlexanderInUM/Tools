@@ -11,7 +11,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
   {
-    label: '1',
+    label: '全民 K歌',
     key: '/song',
     icon: <CustomerServiceOutlined />
   }
@@ -49,8 +49,7 @@ export const LayoutApp = () => {
             <Outlet />
           </div>
         </Content>
-        <Footer className='text-center'>1</Footer>
-        {/* <Footer className='text-center'>为女友准备的工具合集</Footer> */}
+        <Footer className='text-center'>为女友准备的工具合集</Footer>
       </Layout>
     </Layout>
   );
