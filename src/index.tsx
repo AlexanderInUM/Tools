@@ -11,13 +11,13 @@ const root = ReactDOM.createRoot(
 );
 
 const queryClient = new QueryClient();
-
+console.log(process.env);
 root.render(
   <React.StrictMode>
     <HashRouter>
       <QueryClientProvider client={queryClient}>
         <App />
-        <ReactQueryDevtools />
+        {process.env.NODE_ENV === 'development' && <ReactQueryDevtools />}
       </QueryClientProvider>
     </HashRouter>
   </React.StrictMode>

@@ -32,7 +32,6 @@ export const LayoutApp = () => {
       >
         <div className='h-16 flex justify-center items-center'>
           <img src={logoImg} alt='logo' className='w-12'></img>
-          <span className='text-white ml-5'>工具集</span>
         </div>
         <Menu
           theme='dark'
@@ -49,7 +48,9 @@ export const LayoutApp = () => {
             <Outlet />
           </div>
         </Content>
-        <Footer className='text-center'>为女友准备的工具合集</Footer>
+        <Footer className='text-center'>
+          A tools collection for girlfriend😊
+        </Footer>
       </Layout>
     </Layout>
   );

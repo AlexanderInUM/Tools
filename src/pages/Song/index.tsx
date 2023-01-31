@@ -6,17 +6,27 @@ import { saveAs } from 'file-saver';
 
 export const Song = () => {
   const [value, setValue] = useState('');
-  const { refetch, data, isFetching } = useSongUrl(value);
+  const { refetch, isFetching } = useSongUrl(value);
   const handleClick = async () => {
-    await refetch();
+    const { data } = await refetch();
     try {
-      saveAs(data.url, '这是你下载的歌.mp3');
+      if (data?.url) {
+        saveAs(data.url, `${data.singerName}-${data.songName}.mp3`);
+      }
     } catch (error) {
-      message.error('下载出错了😭');
+      message.error('下载出错了😭，再重试一下~');
     }
   };
   return (
     <Spin spinning={isFetching}>
+      <div>1. 打开全民 k 歌对应的歌曲页面</div>
+      <div>2. 点击右上角的三个点</div>
+      <div>3. 点击分享</div>
+      <div>4. 选择「复制链接」</div>
+      <div>5. 粘贴至下面的输入框中</div>
+      <div>6. 点击下载</div>
+      <br />
+      <div>Example: </div>
       <div className='w-40'>
         <Image src={stepImg} alt='step' />
       </div>
@@ -28,6 +38,7 @@ export const Song = () => {
           onInput={(e) => setValue(e.currentTarget.value)}
         />
       </div>
+      <br />
       <Button onClick={handleClick}>下载</Button>
     </Spin>
   );
