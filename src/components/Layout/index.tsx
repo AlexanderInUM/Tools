@@ -1,9 +1,9 @@
+import logoImg from '@/assets/love.png';
 import { BookOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import logoImg from '../../assets/love.png';
 
 const { Header, Content, Sider } = Layout;
 

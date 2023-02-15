@@ -1,7 +1,7 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
 import { LayoutApp } from './components/Layout';
+import Book from './pages/Book';
 import { Song } from './pages/Song';
-import Book from 'pages/Book';
 
 const routes: RouteObject[] = [
   {

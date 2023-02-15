@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
-import { App } from './route';
-import './index.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { HashRouter } from 'react-router-dom';
+import './index.css';
+import { App } from './route';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +16,7 @@ root.render(
     <HashRouter>
       <QueryClientProvider client={queryClient}>
         <App />
-        {process.env.NODE_ENV === 'development' && <ReactQueryDevtools />}
+        {import.meta.env.DEV && <ReactQueryDevtools />}
       </QueryClientProvider>
     </HashRouter>
   </React.StrictMode>

@@ -1,8 +1,8 @@
+import stepImg from '@/assets/song-step.jpg';
+import { useSongUrl } from '@/hooks/useSongUrl';
 import { Button, Image, Input, Spin, message } from 'antd';
-import stepImg from '../../assets/song-step.jpg';
-import { useSongUrl } from 'hooks/useSongUrl';
-import { useState } from 'react';
 import { saveAs } from 'file-saver';
+import { useState } from 'react';
 
 export const Song = () => {
   const [value, setValue] = useState('');
