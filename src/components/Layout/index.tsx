@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { CustomerServiceOutlined } from '@ant-design/icons';
+import { BookOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
+import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import logoImg from '../../assets/love.png';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -14,6 +14,11 @@ const items: MenuItem[] = [
     label: '全民 K歌',
     key: '/song',
     icon: <CustomerServiceOutlined />
+  },
+  {
+    label: '电子书',
+    key: '/book',
+    icon: <BookOutlined />
   }
 ];
 
@@ -48,9 +53,9 @@ export const LayoutApp = () => {
             <Outlet />
           </div>
         </Content>
-        <Footer className='text-center'>
+        {/* <Footer className='text-center'>
           A tools collection for girlfriend😊
-        </Footer>
+        </Footer> */}
       </Layout>
     </Layout>
   );
