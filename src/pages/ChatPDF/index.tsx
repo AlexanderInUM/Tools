@@ -8,7 +8,7 @@ export default function ChatPDF() {
       <iframe
         src='https://www.chatpdf.com/'
         className='block h-[80vh] w-full border-none'
-        title='zlib'
+        title='pdf'
         onLoad={() => setLoading(false)}
       ></iframe>
     </Spin>
